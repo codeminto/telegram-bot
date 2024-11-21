@@ -1,0 +1,314 @@
+.game-container {
+  @apply flex justify-center items-center font-sans font-bold text-gray-800 min-h-[100dvh] bg-[#c3e4c2] relative;
+}
+
+.main-content {
+  @apply w-full max-w-[500px] flex flex-col min-h-[100dvh] bg-[url('../../images/background.png')] bg-cover bg-center sm:rounded-[15px] shadow-[0px_4px_15px_rgba(0,0,0,0.3)] overflow-hidden relative;
+}
+
+.header {
+  @apply flex justify-between items-center px-8 py-4 sm:py-8 text-[1.1rem] flex-none; /* Fixed height for header */
+}
+
+.level-section {
+  @apply flex items-center justify-center w-[180px] h-[40px] bg-[url('../../images/bg_level.png')] bg-contain bg-no-repeat rounded-[12px] relative p-[5px];
+}
+
+.content-wrapper {
+  @apply flex items-center w-[90%];
+}
+
+.level-text {
+  @apply text-[14px] font-bold text-[#604010] mr-[4px];
+}
+
+.progress-bar-container-lv {
+  @apply w-[30%] bg-[url('../../images/bar_level_1.png')] bg-cover bg-no-repeat rounded-[10px] overflow-hidden p-[2px];
+}
+
+.progress-bar-lv {
+  @apply w-full h-[5px] bg-transparent rounded-[5px] overflow-hidden;
+}
+
+.progress-lv {
+  @apply h-full bg-[url('../../images/bar_level2.png')] bg-cover rounded-[5px];
+}
+
+.coins {
+  @apply flex items-center justify-center bg-[url('../../images/bg_gold.png')] bg-contain bg-no-repeat w-[150px] h-[40px] text-[#9b5b0e] px-4 relative;
+}
+
+.coin-icon {
+  @apply absolute left-[-0.1rem] bottom-[0.2rem] w-[38px] h-[38px];
+}
+
+.coin-text {
+  @apply ml-4 font-bold;
+}
+
+.secondary-progress-bar {
+  @apply flex justify-center items-center w-full;
+}
+
+.progress-bar {
+  @apply relative w-[60%] h-[30px] bg-[url('../../images/bar_emoji_1.png')] bg-contain bg-no-repeat bg-center rounded-[15px] overflow-hidden;
+}
+
+.progress {
+  @apply absolute top-[-2px] left-1 h-[31px] bg-[url('../../images/bar_emoji_2.png')] bg-contain bg-[100%_50%] align-middle bg-no-repeat rounded-[15px];
+  width: 78%; /* Inline width or set dynamically based on progress */
+}
+
+.progress-icon {
+  @apply absolute bottom-[2px] left-[78%] -translate-x-1/2 z-10 flex flex-col items-center font-bold text-[#9b5b0e];
+}
+
+.progress-icon img {
+  @apply w-[25px] h-[25px];
+}
+
+/* Make character section flexible */
+.character-section {
+  @apply flex-1 flex justify-center items-center;
+}
+
+.cat-image {
+  @apply w-auto h-auto max-h-[32vh] min-h-[220px] max-w-[80%] object-contain;
+}
+
+/* Adjust character image size for shorter screens */
+@media (min-width: 640px) {
+  .cat-image {
+    @apply max-h-[35vh] min-h-[250px] max-w-[200px];
+  }
+}
+
+@media (max-height: 400px) {
+  .header {
+    @apply py-2;
+  }
+  
+  .character-section {
+    @apply pt-[0.25rem] pb-[0.25rem];
+  }
+  
+  .cat-image {
+    @apply max-h-[20vh] min-h-[150px];
+  }
+  
+  .actions {
+    @apply mt-[0.5rem] mb-[50px];
+  }
+  
+  .action-button img {
+    @apply h-[40px] w-[70px];
+  }
+  
+  .button-text {
+    @apply text-[0.7rem];
+  }
+  
+  .footer {
+    @apply py-0;
+  }
+  
+  .footer-button {
+    @apply p-[4px] w-[50px] h-[50px];
+  }
+  
+  .footer-button img {
+    @apply w-[24px] h-[24px];
+  }
+}
+
+/* Add responsive adjustments for different screen sizes */
+@media (max-height: 667px) {
+  .cat-image {
+    @apply max-h-[28vh] min-h-[200px];
+  }
+
+  .actions {
+    @apply pb-2;
+  }
+
+  .action-button img {
+    @apply h-[50px] w-[90px];
+  }
+
+  .button-text {
+    @apply text-[0.9rem];
+  }
+}
+
+@media (max-height: 568px) {
+  .header {
+    @apply py-2;
+  }
+
+  .cat-image {
+    @apply max-h-[25vh] min-h-[180px];
+  }
+
+  .actions {
+    @apply pb-1;
+  }
+
+  .action-button img {
+    @apply h-[45px] w-[80px];
+  }
+
+  .button-text {
+    @apply text-[0.8rem];
+  }
+
+  .footer {
+    @apply py-0;
+  }
+}
+
+/* Container styling */
+/* Container styling */
+.container {
+  @apply flex justify-center items-center mt-4 sm:mt-8 mb-10;
+}
+
+/* Multiplier bar styling */
+.multiplier-bar {
+  @apply flex justify-between items-center relative w-[150px] sm:w-[200px] h-[25px] sm:h-[30px] bg-[#608340] rounded-full shadow-md overflow-hidden;
+}
+
+/* Start marker styling for x1 */
+.multiplier-start {
+  @apply text-white text-sm font-bold rounded-full flex items-center justify-center absolute left-[1px];
+  width: 30px;
+  height: 30px;
+  background-image: url('../../images/button_x1.png'); /* Path to button_x1.png */
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+/* Center bar styling with gradient background */
+.multiplier-center {
+  @apply relative h-full flex items-center justify-center rounded-full;
+  width: 60%; /* Adjust width as needed */
+  background-image: url('../../images/bg_bar_x_2.png'); /* Path to the background image */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Center text styling for x8 */
+.multiplier-center-text {
+  @apply text-white text-sm font-bold ml-6;
+}
+
+/* End marker styling for x10 */
+.multiplier-end {
+  @apply text-white text-sm font-bold rounded-full flex items-center justify-center absolute right-[1px];
+  width: 30px;
+  height: 30px;
+  background-image: url('../../images/button_x10.png'); /* Path to button_x10.png */
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+
+@keyframes button-scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Actions section as a flexible item */
+.actions {
+  @apply flex justify-center items-center gap-3 w-full pb-4;
+}
+
+.action-button {
+  @apply relative inline-flex items-center justify-center text-center;
+}
+
+.action-button:hover {
+  animation: button-scale 0.3s ease-in-out; /* Animation on hover */
+}
+
+.action-button img {
+  @apply h-[60px] sm:h-[70px] w-[100px] sm:w-[120px];
+}
+
+.center-button img {
+  @apply h-[70px] sm:h-[80px];
+}
+
+.button-text {
+  @apply absolute top-[20%] sm:top-[20%] font-bold text-white text-[1rem] sm:text-[1.2rem];
+}
+
+.center-button-text {
+  @apply top-[8%] sm:top-[10%];
+}
+
+.timer-text {
+  @apply absolute bottom-[20%] sm:bottom-[22%] text-[#ffd966] text-[0.8rem] sm:text-[0.9rem] flex items-center gap-[0.2rem];
+}
+
+/* Footer as a fixed section */
+.footer {
+  @apply flex justify-around items-center bg-[#ECE8D5] py-1 border-t-[8px] border-[#DAA24E] w-full max-w-[500px] shadow-md;
+}
+
+
+
+.footer-button {
+  @apply flex flex-col items-center justify-center p-[8px] sm:p-[10px] relative w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] transition-transform duration-300 ease-in-out;
+}
+
+.footer-button:hover {
+  animation: button-scale 0.3s ease-in-out;
+}
+
+
+
+.footer-button.active {
+  @apply text-white bg-contain bg-center bg-no-repeat text-[0.5rem] sm:text-[0.6rem] rounded-[10px] sm:rounded-[15px];
+  background-image: url('../../images/bg_tab_red.png');
+  animation: none;  /* Disable any animation */
+  transform: scale(2); /* Default scaling */
+}
+
+.footer-button img {
+  @apply w-[30px] sm:w-[36px] h-[30px] sm:h-[36px];
+}
+
+.footer-button.active img {
+  @apply scale-75 mb-[-3px] sm:mb-[-4px] mt-[-8px] sm:mt-[-10px];
+}
+
+.footer-button span {
+  @apply text-[#91570E] font-black;
+}
+
+.footer-button.active span {
+  @apply text-white;
+}
+
+/* Adjustments for short screens */
+@media (max-height: 600px) {
+  .actions {
+    margin-bottom: 60px; /* Adjust margin for short screens */
+  }
+  .action-button img {
+    @apply h-[50px] sm:h-[60px] w-[80px] sm:w-[100px]; /* Smaller images for short screens */
+  }
+  .button-text {
+    @apply text-[0.8rem] sm:text-[1rem]; /* Adjust text size */
+  }
+  .timer-text {
+    @apply text-[0.7rem] sm:text-[0.8rem];
+  }
+}
